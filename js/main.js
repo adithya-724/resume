@@ -30,9 +30,19 @@
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>50)});
 
-// Mobile nav
-function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
-function closeNav(){document.getElementById('navLinks').classList.remove('open')}
+// Mobile nav with hamburger animation
+function toggleNav(){
+  const navLinks=document.getElementById('navLinks');
+  const hamburger=document.getElementById('hamburger');
+  navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open');
+}
+function closeNav(){
+  const navLinks=document.getElementById('navLinks');
+  const hamburger=document.getElementById('hamburger');
+  navLinks.classList.remove('open');
+  hamburger.classList.remove('open');
+}
 
 // Intersection observer for reveals
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');
