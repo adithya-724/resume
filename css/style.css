@@ -21,8 +21,14 @@ nav.scrolled{backdrop-filter:blur(20px);background:rgba(10,14,23,.8);border-bott
 .nav-links a:hover{color:var(--text)}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
 .nav-links a:hover::after{width:100%}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{width:24px;height:2px;background:var(--text);transition:all .3s}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;position:relative;width:32px;height:24px}
+.hamburger span{width:24px;height:2px;background:var(--text);transition:all .3s;position:absolute;left:4px}
+.hamburger span:nth-child(1){top:4px}
+.hamburger span:nth-child(2){top:11px}
+.hamburger span:nth-child(3){top:18px}
+.hamburger.open span:nth-child(1){transform:rotate(45deg);top:11px}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg);top:11px}
 
 /* Sections */
 section{padding:6rem 2rem}
