@@ -126,23 +126,20 @@ footer{padding:2rem;text-align:center;font-size:.8rem;color:var(--text3);positio
 @media(max-width:768px){
   section{padding:4rem 1.25rem}
   
-  /* Mobile Nav - Smooth Animation with Glass Background */
+  /* Mobile Nav - Full width, no corners, opaque */
   .nav-links{
     position:absolute;
     top:100%;
-    left:1rem;
-    right:1rem;
-    margin-top:0.5rem;
-    background:rgba(10,14,23,.85);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:1.5rem;
+    left:0;
+    right:0;
+    background:rgba(10,14,23,.98);
+    border:none;
+    border-radius:0;
+    padding:1.5rem 2rem;
     flex-direction:column;
     align-items:center;
     justify-content:flex-start;
-    gap:1.25rem;
+    gap:1.5rem;
     opacity:0;
     visibility:hidden;
     transform:translateY(-10px);
@@ -150,7 +147,7 @@ footer{padding:2rem;text-align:center;font-size:.8rem;color:var(--text3);positio
     z-index:99;
     display:flex;
     pointer-events:none;
-    box-shadow:0 10px 40px rgba(0,0,0,.4);
+    box-shadow:0 20px 40px rgba(0,0,0,.5);
   }
   .nav-links.open{
     opacity:1;
@@ -158,7 +155,13 @@ footer{padding:2rem;text-align:center;font-size:.8rem;color:var(--text3);positio
     transform:translateY(0);
     pointer-events:auto;
   }
-  .nav-links a{font-size:1.1rem}
+  .nav-links a{
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--text);
+    letter-spacing:0.02em;
+  }
+  .nav-links a:hover{color:var(--accent)}
   .hamburger{display:flex;z-index:101}
   .about-grid,.contact-grid,.achievement-cards{grid-template-columns:1fr}
   .about-stats{grid-template-columns:1fr 1fr}
